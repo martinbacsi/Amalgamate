@@ -3,3 +3,8 @@
 ################################################################################
 
 /Builds/VisualStudio2010/Release
+/Builds/VisualStudio2010/Debug
+/Builds/VisualStudio2010/Amalgamate.VC.VC.opendb
+/Builds/VisualStudio2010/Amalgamate.VC.db
+/Builds/VisualStudio2010/Amalgamate.sln
+/Builds/VisualStudio2010/.vs/Amalgamate/v14

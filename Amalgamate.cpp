@@ -386,7 +386,7 @@ private:
   {
     ParsedInclude ()
       : isIncludeLine (false)
-      , preventReinclude (false)
+      , preventReinclude (true)
       , forceReinclude (false)
       , endOfInclude (0)
     {
@@ -708,21 +708,22 @@ void WatchDirectory(LPTSTR);
 int main(int argC, char** argV)
 {
 	//char* dir = "D:\\Amalgamate\\Builds\\VisualStudio2010\\";
-	//char pwd[100];
+	char* pwd = "D:/c++/fantasticbits/FantasticBits/FantasticBits";
 	//GetCurrentDirectory(100, pwd);
 
-	String homoDir = argV[1];
+	String homoDir = String(pwd) + String("/");
 	String inFile = homoDir + String("CG.cpp");
 	String outFile = homoDir + String("CG_OUT.cpp");
 
 
-	Amalgamator amalgamator(inFile);
-	amalgamator.setTemplate(inFile);
-	amalgamator.setTarget(outFile);
+	
+
 	while (1)
 	{
-		WatchDirectory(argV[1]);
-		
+		WatchDirectory(pwd);
+		Amalgamator amalgamator(inFile);
+		amalgamator.setTemplate(inFile);
+		amalgamator.setTarget(outFile);
 		amalgamator.process();
 	}
 }
